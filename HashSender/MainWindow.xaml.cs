@@ -41,7 +41,7 @@ namespace HashSender
 
 
 			string lines;
-			SendBtnText.Text = "Sending Message ...";
+			SendBtnText.Text = "Sending";
 			lines = File.ReadAllText(path.Text);
 			Console.WriteLine("message read " + lines);
 
@@ -58,7 +58,9 @@ namespace HashSender
 				writer.Write(signedMessage);
 			}
 
-		}
+            SendBtnText.Text = "Sent";
+
+        }
 
 		private void BrowseFile_Click(object sender, RoutedEventArgs e)
 		{
