@@ -1,0 +1,42 @@
+﻿<Window x:Class="HashSender.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HashSender"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox
+                    Grid.Row="3" Margin="10" Grid.Column="2" Grid.ColumnSpan="3"
+                    x:Name="path">
+            
+        </TextBox>
+        <Button x:Name="browse" Grid.Row="3" Grid.Column="5" Margin="0,10"  Click="BrowseFile_Click">
+            Browse
+        </Button>
+        <Button x:Name="Send" Grid.Row="5" Margin="65,9.8,65,10" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Top"
+                            FontWeight="Light" Click="SendFile_Click">Send</Button>
+    </Grid>
+</Window>
