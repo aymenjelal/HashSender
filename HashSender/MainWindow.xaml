@@ -1,42 +1,63 @@
 ﻿<Window x:Class="HashSender.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HashSender"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:HashSender"
+		mc:Ignorable="d"
+		Background="#5BA0E7 "
+		Title="Secure File Sender" Height="450" Width="800">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
 
-        <TextBox
-                    Grid.Row="3" Margin="10" Grid.Column="2" Grid.ColumnSpan="3"
-                    x:Name="path">
-            
-        </TextBox>
-        <Button x:Name="browse" Grid.Row="3" Grid.Column="5" Margin="0,10"  Click="BrowseFile_Click">
-            Browse
-        </Button>
-        <Button x:Name="Send" Grid.Row="5" Margin="65,9.8,65,10" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Top"
-                            FontWeight="Light" Click="SendFile_Click">Send</Button>
-    </Grid>
+		<StackPanel 
+			Name="ImagePanel" 
+			Drop="ImagePanel_Drop" 
+			AllowDrop="True" 
+			Grid.ColumnSpan="3" Margin="9.8,52.2,10,20.2"
+			Grid.RowSpan="4" Grid.Column="2"
+			Background="White" Grid.Row="1"
+			TextBlock.TextAlignment="Center" RenderTransformOrigin="0.509,0.199">
+			<StackPanel.Resources>
+				<Style TargetType="Border">
+					<Setter Property="CornerRadius" Value="10"/>
+				</Style>
+			</StackPanel.Resources>
+			<TextBlock TextAlignment="Center" Width="320" Margin="0,60,0.8,0" Height="29" RenderTransformOrigin="0.506,1.138"><Run Text="Drop your file here"/></TextBlock>
+			<TextBox Margin="0,29,0,0" BorderThickness="0"
+					x:Name="path" Height="20"/>
+		</StackPanel>
+
+
+		<Button x:Name="Send" Grid.Row="4"
+				Margin="3.2,40.6,106,0" Grid.Column="3" Grid.ColumnSpan="2" VerticalAlignment="Top"
+							FontWeight="Light" Click="SendFile_Click" Background="#ffb733" Foreground="White" Grid.RowSpan="2" Height="53">
+			<Button.Resources>
+				<Style TargetType="Border">
+					<Setter Property="CornerRadius" Value="5"/>
+					<Setter Property="BorderThickness" Value="0"/>
+				</Style>
+			</Button.Resources>
+			<TextBlock FontSize="20" FontWeight="Bold" x:Name="SendBtnText">Send</TextBlock>
+		</Button>
+	</Grid>
 </Window>
